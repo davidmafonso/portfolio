@@ -1,0 +1,242 @@
+/* 1. Base */
+/* Generic */
+html {
+/*background-color: #9013fe;*/
+background-color: #00bcf1;
+/*background-image: linear-gradient(to bottom right, #180cac, #d054e4);*/
+background-image: linear-gradient(to bottom right, #00bcf1, #180CAC);
+color: #fff;
+font-family: "Quicksand", sans-serif;
+font-size: 16px;
+/*-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;*/
+/* *** TRY AND REMOVE FONT-SMOOTHING, IT IS NON-STANDARD PRACTICE, OUTDATED *** */
+line-height: 1.5;
+min-height: 100vh;
+min-width: 300px;
+overflow-x: hidden;
+text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* links */
+a {
+color: currentColor;
+cursor: pointer;
+text-decoration: none;
+}
+
+
+
+
+/* 2. Shared */
+/* wallpaper, picture-shadow, picture-image */
+.wallpaper,
+.picture-shadow,
+.picture-image {
+display: block;
+height: 100%;
+left: 0;
+top: 0;
+width: 100%;
+}
+
+/* job, button */
+.job,
+.button {
+font-family: "Montserrat", "Quicksand", sans-serif;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+}
+
+/* button, social media links */
+.button,
+.social a {
+transform-origin: center;
+transition-duration: 100ms;
+}
+
+
+/* 3. Specific */
+/* wallpaper */
+.wallpaper {
+background-image: url("../images/geres.jpg");
+background-position: center;
+background-size: cover;
+opacity: 0.2;
+position: fixed;
+}
+
+.picture {
+padding-top: 100%; /* makes picture as high as it is wide resulting in a square at all times */
+position: relative; /* reference point for children: shadow and image */
+width: 100%;
+}
+.picture-shadow {
+border-radius: 291190px;
+background-image: radial-gradient(#000 0%, rgba(0, 0, 0, 0) 70%);
+position: absolute;
+top: 10%;
+}
+.picture-image {
+border-radius: 291190px;
+position: absolute;
+}
+
+.job {
+color: #ffe479;
+font-size: 0.75rem;
+}
+
+.hr {
+/* background-color: #ff470f;*/
+background-image: linear-gradient(to right, #ff470f, #ffe479);
+border: none;
+content: "";
+height: 1px;
+margin-bottom: 1.5rem;
+margin-top: 1.5rem;
+transform-origin: center left;
+width: 4rem;
+}
+
+.description {
+font-size: 1.5rem;
+}
+
+
+/* get in touch button */
+.contact {
+display: inline-block;
+margin-top: 1.5rem;
+vertical-align: top;
+}
+
+.button {
+background-color: #fff;
+border-radius: 291190px;
+box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+/*color: #9013fe;*/
+color: #00bcf1;
+display: inline-block;
+font-size: 0.875rem; /* change font-size and it will resize the button proportionally, maintaining perfect ratio */
+line-height: 1;
+padding: 1.25em 2em;
+text-shadow: none;
+transition-property: box-shadow, transform;
+user-select: none; /* text cannot be selected */
+vertical-align: top;
+white-space: nowrap; /* to make sure the text is never displayed on two lines */
+will-change: box-shadow, transform;
+}
+
+/* button states */
+    /* hover */
+    .button:hover {
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+    transform: scale(1.02) translateY(-4px); /* scale: increases the button's size by 2% + move it upwards by 4px */
+    }
+
+    /* pressed downwards effect */
+    .button:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transform: scale(0.98) translateY(-2px);
+    }
+
+/* social media icons */
+.social {
+display: flex;
+margin-top: 1.5rem;
+}
+.social li {
+height: 2rem;
+margin-right: 0.5rem;
+text-align: center;
+width: 2rem;
+}
+.social a {
+align-items: center;
+display: flex;
+font-size: 1.5rem; /* Because the icons are text, we can use the font-size property to increase the icon's size */
+height: 2rem;
+justify-content: center;
+opacity: 0.5;
+transition-property: opacity, transform;
+width: 2rem;
+will-change: opacity, transform;
+}
+
+.social a:hover {
+opacity: 1;
+transform: scale(1.25);
+}
+
+.social a:active {
+opacity: 1;
+transform: scale(1.1);
+}
+
+
+/* CSS Flexbox */
+.content {
+display: flex;
+position: relative;
+min-height: 100vh;
+}
+.side {
+max-height: 20rem;
+max-width: 20rem;
+}
+.about {
+max-width: 26rem;
+}
+
+
+.name {
+font-size: 2.25rem;
+line-height: 1.125;
+margin-bottom: 0.5rem;
+}
+
+
+
+
+/* 4. Responsiveness */
+
+/* targetting mobile or devices with a viewport (width) narrower or equal to 799px - if @media sceen and (max-width: 799px) then {do this} */
+@media screen and (max-width: 799px) {
+.content {
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 5rem 3rem; /* first is vertical axis at 5rem and then horizontal axis at 3rem */
+}
+.side {
+margin-bottom: 3rem;
+width: 100%;
+}
+}
+
+/* targetting desktop or devices with a viewport (width) wider or equal to 800px - if @media sceen and (min-width: 800) then {do this} */
+@media screen and (min-width: 800px) {
+.content {
+align-items: center;
+justify-content: space-around;
+justify-content: space-evenly; /* space-evenly is not available in all browsers // space-around is an alternative when space-evenly is unavailable */
+padding: 4rem;
+}
+.side {
+flex-grow: 0;
+flex-shrink: 0;
+height: 20rem;
+margin-left: 4rem;
+order: 2; /* to appear after the text content */
+width: 20rem;
+}
+.about {
+flex-grow: 1;
+flex-shrink: 1;
+}
+}

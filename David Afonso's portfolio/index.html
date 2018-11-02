@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Afonso – Web Development student</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/minireset.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <script defer type="text/javascript" src="js/main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script> <!-- to import Font Awesome library -->
+</head>
+<body>
+    <div id="wallpaper" class="wallpaper" data-image="images/geres.jpg"></div>
+    <div class="content"><!-- side and about // don't make any confusion between 'side' and 'aside' -->
+
+        <!-- space for profile picture -->
+        <aside class="side">
+        <figure id="picture" class="picture">
+            <div class="picture-shadow"></div>  <!-- picture-shadow and picture-image: separate classes for animation -->
+            <img id="pictureImage" class="picture-image" src="images/david.jpg" srcset="images/david.jpg 1x, images/david@2x.jpg 2x, images/david@3x.jpg 3x" alt="Portrait of David Afonso" width="320px" height="320px"> <!-- optimise pictures of me and use them here -->
+        </figure>
+        </aside>
+
+        <!-- content for profile -->
+        <main class="about">
+        <h1 class="name">Hey,<br>I'm David.</h1>
+        <p class="job">3rd year Web Development student<br>Manchester Metropolitan University</p>
+
+        <hr class="hr">
+
+        <div class="description">
+            <p>My interests are based on Web stuff, Design, Storytelling, Photography, Video, Film and Music. But mostly learning.</p>
+            <p>I'm available to be part of an awesome team!</p>
+        </div>
+        <div class="contact">
+            <a class="button" href="mailto:davidmafonso@gmail.com">Email Dave</a>
+            <ul class="social"> <!-- <ul> acts as a flexbox container for each square list item -->
+                <li>
+                    <a href="https://twitter.com/dave_mfa" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/davidmafonso" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://uk.linkedin.com/in/david-afonso-33654042" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        </main>
+    </div>
+
+    <noscript>
+        <style type="text/css">
+            .wallpaper {
+                animation-name: zoomOut;
+            }
+
+            .picture {
+            animation-name: dropIn;
+            }
+        </style>
+    </noscript>
+
+</body>
+</html>
